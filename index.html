@@ -9,9 +9,35 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Quotes Project</h1>
-    <div>
-      <h2>Hi</h2>
-    </div>
+    <h1>Daily Wellness App</h1>
+
+    <figure>
+      <blockquote>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+          molestias, voluptate sunt ab repellendus unde numquam blanditiis
+          praesentium, aliquam cum debitis delectus vel quae amet aperiam
+          facilis quia nobis maxime.
+        </p>
+      </blockquote>
+      <figcaption>—Aldous Huxley</figcaption>
+      <button type="button">New quote</button>
+    </figure>
+
+    <form id="reviews">
+      <h4><label for="review">Leave a review of our app:</label></h4>
+      <p><label for="name">Name:</label></p>
+      <input type="text" id="name" name="name" placeholder="Your name.." />
+      <br />
+      <br />
+      <textarea
+        id="text"
+        name="review"
+        rows="4"
+        placeholder="Tell us what you like about this quote.."
+      ></textarea>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
   </body>
 </html>
