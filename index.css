@@ -1,3 +1,78 @@
-h1 {
-  color: blue;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  font-family: "Arimo", sans-serif;
+  color: #212121;
+}
+
+h1 {
+  color: #00796b;
+  font-size: 52px;
+  margin-bottom: 32px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  background-color: rosybrown;
+  margin-bottom: 48px;
+  padding: 54px 46px;
+}
+
+.header {
+  width: 1200px;
+  height: 100vh;
+  background-color: bisque;
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #00796b;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 9px;
+}
+
+.btn {
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #00796b;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 9px;
+}
+
+/*
+dark-primary-color    { background: #00796B; }
+.default-primary-color { background: #009688; }
+.light-primary-color   { background: #B2DFDB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #9E9E9E; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }  */
+
+/*  
+.dark-primary-color    { background: #455A64; }
+.default-primary-color { background: #607D8B; }
+.light-primary-color   { background: #CFD8DC; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #009688; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
+*/
