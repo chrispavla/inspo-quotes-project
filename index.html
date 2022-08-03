@@ -42,7 +42,7 @@
     </section>
 
     <div class="container">
-      <form id="reviews">
+      <form id="reviews" method="POST">
         <label for="review">What Are You Grateful for Today?:</label>
         <p><label for="name">Name:</label></p>
         <input type="text" id="name" name="name" placeholder="Your name.." />
@@ -57,6 +57,11 @@
         <br />
         <input type="submit" class="btn" value="Submit" />
       </form>
+    </div>
+    <div id="list">
+      <h2>I AM GRATEFUL FOR . . .</h2>
+      <ul id="grateful">
+      </ul>
     </div>
   </body>
 </html>
