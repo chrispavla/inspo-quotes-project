@@ -20,7 +20,7 @@
   <body>
     <div class="header">
       <h1>Daily Wellness App</h1>
-      <p>What you focus...</p>
+      <p>Where the head goes, the body follows</p>
       <a href="#quote" class="btn">Find your quote</a>
     </div>
 
@@ -28,7 +28,7 @@
       <div class="container">
         <figure>
           <blockquote id="quote">
-            <p>loading...</p>
+            <p>Wait for it...</p>
             <figcaption id="author"></figcaption>
           </blockquote>
           <button type="button" id="new-quote-btn" class="btn">
@@ -55,6 +55,14 @@
     </div> -->
 
     <div class="container">
+
+      <form id="reviews" method="POST">
+        <label for="review">What Are You Grateful for Today?:</label>
+        <p><label for="name">Name:</label></p>
+        <input type="text" id="name" name="name" placeholder="Your name.." />
+        <br />
+        <br />
+
       <form id="reviewsForm">
         <h3>Leave a review of our app:</h3>
         <label for="name">Name:</label>
@@ -65,15 +73,21 @@
           placeholder="Your name.."
         />
 
+
         <textarea
           id="text"
           name="review"
           rows="4"
-          placeholder="Tell us what you like about this quote.."
+          placeholder="Tell us what you're grateful for.."
         ></textarea>
         <br />
         <input type="submit" id="submitReview" />
       </form>
+    </div>
+    <div id="list">
+      <h2>I AM GRATEFUL FOR . . .</h2>
+      <ul id="grateful">
+      </ul>
     </div>
   </body>
 </html>
