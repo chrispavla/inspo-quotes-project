@@ -64,15 +64,31 @@ form.addEventListener("submit", (e) => {
     });
 });
 
-// fetch("https://api.quotable.io/tags")
-//   .then((res) => res.json())
-//   .then((list) => renderTags(list));
+let tagQuotes;
+let filterArray;
+let tagResult;
+let dropdown = document.querySelector("#keyword-dropdown");
 
-// function renderTags(list) {
-//   list.forEach((tag) => {
-//     const ul = document.querySelector("div ul");
-//     const li = document.createElement("li");
-//     li.textContent = tag.name;
-//     ul.append(li);
-//   });
-// }
+fetch(`http://api.quotable.io/quotes?tags=${tagResult}`)
+  .then((res) => res.json())
+  .then((data) => renderKeywordQuotes(data));
+
+function renderKeywordQuotes(data) {
+  tagQuotes = data.results;
+  filterArray.forEach((quote) => {
+    let quotesContainer = document.querySelector("#quotes-container");
+    let quotesUL = document.createElement("ul");
+    let quotesLI = document.createElement("li");
+    quotesLI.textContent = `${quote.content} by ${quote.author}`;
+    quotesUL.append(quotesLI);
+    quotesContainer.append(quotesUL, quotesLI);
+  });
+}
+
+dropdown.addEventListener("change", handleChange);
+
+function handleChange(e) {
+  tagResult = e.target.value;
+  filterArray = tagQuotes.filter((quote) => quote.includes(tagResult));
+  console.log(filterArray);
+}
