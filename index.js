@@ -14,46 +14,18 @@ function renderQuote(quoteData) {
         p.textContent = `"${quoteData.content}"`;
         const author = document.querySelector("#author");
         author.textContent = `━ ${quoteData.author}`;
+        p.addEventListener("mouseenter", () => {
+          p.style.color = "#00796B";
+        });
+      
+        p.addEventListener("mouseleave", () => {
+          p.style.color = "#212121";
+        });
     }
 
 newQuote.addEventListener('click', () => fetchQuotes())
 
 fetchQuotes()
-
-let form = document.querySelector('#reviews')
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
-  buildToDo(e.target.text.value)
-  form.reset()
-})
-
-function buildToDo(todo) {
-  let p = document.createElement('p')
-  let btn = document.createElement('button')
-  btn.addEventListener('click', handleDelete)
-  btn.textContent = 'x '
-  p.textContent = `${todo}`
-  p.appendChild(btn) 
-  document.querySelector('#grateful').appendChild(p)
-}
-
-function handleDelete(e) {
-  e.target.parentNode.remove()
-}
-
-  const p = document.querySelector("blockquote p");
-  p.textContent = `"${quoteData.content}"`;
-  const author = document.querySelector("#author");
-  author.textContent = `━ ${quoteData.author}`;
-
-  p.addEventListener("mouseenter", () => {
-    p.style.color = "#00796B";
-  });
-
-  p.addEventListener("mouseleave", () => {
-    p.style.color = "#212121";
-  });
-}
 
 let form1 = document.querySelector("#search-form");
 form1.addEventListener("input", (e) => {
@@ -80,7 +52,7 @@ form1.addEventListener("input", (e) => {
   }
 });
 
-form.addEventListener("submit", (e) => {
+form1.addEventListener("submit", (e) => {
   e.preventDefault();
   let searchResult = document.querySelector("#search-bar").value.toLowerCase();
   let searchContainer = document.querySelector("#searchResultContainer");
@@ -100,7 +72,7 @@ form.addEventListener("submit", (e) => {
     });
 });
 
-let tagQuotes;
+/* let tagQuotes;
 let filterArray;
 let tagResult;
 let dropdown = document.querySelector("#keyword-dropdown");
@@ -118,8 +90,8 @@ function renderKeywordQuotes(data) {
     quotesLI.textContent = `${quote.content} by ${quote.author}`;
     quotesUL.append(quotesLI);
     quotesContainer.append(quotesUL, quotesLI);
-  });
-}
+  }); */
+/* }
 
 dropdown.addEventListener("change", handleChange);
 
@@ -127,4 +99,26 @@ function handleChange(e) {
   tagResult = e.target.value;
   filterArray = tagQuotes.filter((quote) => quote.includes(tagResult));
   console.log(filterArray);
+} */
+
+let form = document.querySelector('#reviews')
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  buildToDo(e.target.text.value)
+  buildToDo(e.target.name.value)
+  form.reset()
+})
+
+function buildToDo(todo) {
+  let p = document.createElement('p')
+  let btn = document.createElement('button')
+  btn.addEventListener('click', handleDelete)
+  btn.textContent = 'x '
+  p.textContent = `${todo}`
+  p.appendChild(btn) 
+  document.querySelector('#grateful').appendChild(p)
+}
+
+function handleDelete(e) {
+  e.target.parentNode.remove()
 }
