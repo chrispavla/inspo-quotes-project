@@ -35,6 +35,7 @@
           <blockquote id="quote">
             <p>Wait for it...</p>
             <figcaption id="author"></figcaption>
+            <p id="tags"></p>
           </blockquote>
           <div class="buttons">
             <button type="button" id="new-quote-btn" class="btn">
@@ -53,70 +54,73 @@
         </figure>
       </div>
     </section>
-    <div id="search-container">
-      <form id="search-form">
-        <input
-          type="search"
-          id="search-bar"
-          placeholder="Find quotes by author.."
-          name="search"
-        />
-        <button type="submit">Search</button>
-      </form>
-    </div>
-    <div id="searchResultContainer"></div>
-    <label for="tag-keywords">Browse by tag:</label>
-    <select id="keyword-dropdown" name="tag-keywords">
-      <option value=""></option>
-      <option value="athletics">athletics</option>
-      <option value="business">business</option>
-      <option value="change">change</option>
-      <option value="character">character</option>
-      <option value="competition">competition</option>
-      <option value="conservative">conservative</option>
-      <option value="courage">courage</option>
-      <option value="education">education</option>
-      <option value="faith">faith</option>
-      <option value="family">family</option>
-      <option value="famous-quotes">famous-quotes</option>
-      <option value="film">film</option>
-      <option value="freedom">freedom</option>
-      <option value="friendship">friendship</option>
-      <option value="future">future</option>
-      <option value="happiness">happiness</option>
-      <option value="history">history</option>
-      <option value="honor">honor</option>
-      <option value="humor">humor</option>
-      <option value="humorous">humorous</option>
-      <option value="inspirational">inspirational</option>
-      <option value="leadership">leadership</option>
-      <option value="life">life</option>
-      <option value="literature">literature</option>
-      <option value="love">love</option>
-      <option value="motivational">motivational</option>
-      <option value="nature">nature</option>
-      <option value="pain">pain</option>
-      <option value="philosophy">philosophy</option>
-      <option value="politics">politics</option>
-      <option value="power-quotes">power-quotes</option>
-      <option value="proverb">proverb</option>
-      <option value="religion">religion</option>
-      <option value="science">science</option>
-      <option value="self">self</option>
-      <option value="self-help">self-help</option>
-      <option value="social-justice">social-justice</option>
-      <option value="spirituality">spirituality</option>
-      <option value="sports">sports</option>
-      <option value="success">success</option>
-      <option value="technology">technology</option>
-      <option value="time">time</option>
-      <option value="truth">truth</option>
-      <option value="virtue">virtue</option>
-      <option value="war">war</option>
-      <option value="wisdom">wisdom</option>
-    </select>
-
-    <div id="quotes-container"></div>
+    <section id="browsing">
+      <div id="search-container">
+        <form id="search-form">
+          <input
+            type="search"
+            id="search-bar"
+            placeholder="  Find quotes by author.."
+            name="search"
+          />
+          <button type="submit" class="submit-button">Search</button>
+        </form>
+        <div id="searchResultContainer"></div>
+      </div>
+      <div id="dropdownContainer">
+        <label for="tag-keywords">Browse by tag:</label>
+        <select id="keyword-dropdown" name="tag-keywords">
+          <option value=""></option>
+          <option value="athletics">athletics</option>
+          <option value="business">business</option>
+          <option value="change">change</option>
+          <option value="character">character</option>
+          <option value="competition">competition</option>
+          <option value="conservative">conservative</option>
+          <option value="courage">courage</option>
+          <option value="education">education</option>
+          <option value="faith">faith</option>
+          <option value="family">family</option>
+          <option value="famous-quotes">famous-quotes</option>
+          <option value="film">film</option>
+          <option value="freedom">freedom</option>
+          <option value="friendship">friendship</option>
+          <option value="future">future</option>
+          <option value="happiness">happiness</option>
+          <option value="history">history</option>
+          <option value="honor">honor</option>
+          <option value="humor">humor</option>
+          <option value="humorous">humorous</option>
+          <option value="inspirational">inspirational</option>
+          <option value="leadership">leadership</option>
+          <option value="life">life</option>
+          <option value="literature">literature</option>
+          <option value="love">love</option>
+          <option value="motivational">motivational</option>
+          <option value="nature">nature</option>
+          <option value="pain">pain</option>
+          <option value="philosophy">philosophy</option>
+          <option value="politics">politics</option>
+          <option value="power-quotes">power-quotes</option>
+          <option value="proverb">proverb</option>
+          <option value="religion">religion</option>
+          <option value="science">science</option>
+          <option value="self">self</option>
+          <option value="self-help">self-help</option>
+          <option value="social-justice">social-justice</option>
+          <option value="spirituality">spirituality</option>
+          <option value="sports">sports</option>
+          <option value="success">success</option>
+          <option value="technology">technology</option>
+          <option value="time">time</option>
+          <option value="truth">truth</option>
+          <option value="virtue">virtue</option>
+          <option value="war">war</option>
+          <option value="wisdom">wisdom</option>
+        </select>
+        <div id="quotes-container"></div>
+      </div>
+    </section>
 
     <div class="container">
       <form id="reviews" method="POST">
@@ -132,7 +136,7 @@
         <br />
         <input type="text" placeholder="Tags" />
         <br />
-        <input type="submit" id="submitReview" />
+        <input type="submit" class="submit-button" id="submitReview" />
       </form>
     </div>
     <div id="list">

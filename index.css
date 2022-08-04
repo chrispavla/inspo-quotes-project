@@ -14,8 +14,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(images/callum-shaw-HRayFsFYkhM-unsplash.jpg);
+  background-image: url(images/federica-giusti-C8hpCrbWMqA-unsplash.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -23,6 +26,8 @@ h1 {
   font-size: 52px;
   margin-bottom: 32px;
   text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px #fff;
 }
 
 .header {
@@ -37,6 +42,14 @@ h1 {
   text-align: center;
 }
 
+#tags {
+  text-align: left;
+  margin-top: -10px;
+  font-size: 14px;
+  font-style: italic;
+  color: #757575;
+}
+
 .container {
   margin: 0 auto;
   width: 1200px;
@@ -44,10 +57,6 @@ h1 {
   margin-bottom: 48px;
   padding: 54px 46px;
   text-align: center;
-}
-#search-container {
-  text-align: center;
-  background-color: lightskyblue;
 }
 
 .dailyQuotes {
@@ -81,21 +90,91 @@ h1 {
   text-align: center;
 }
 
+#browsing {
+  display: flex;
+  justify-content: space-around;
+  width: 1200px;
+}
+
+#search-form {
+  padding: 16px;
+}
+
+#search-container {
+  text-align: center;
+  margin-top: 42px;
+  padding: 36px;
+  /* background-color: lightskyblue; */
+  width: 50%;
+}
+
+#searchResultContainer {
+  /* background-color: lightsalmon; */
+  margin-top: 16px;
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.styling {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-items: center; */
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 9px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#search-bar {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+#keyword-dropdown {
+  margin-top: 20px;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+#dropdownContainer {
+  /* background-color: aquamarine; */
+  text-align: center;
+  margin-top: 34px;
+  width: 50%;
+  padding: 36px;
+}
+
+#dropdownContainer label {
+  color: #00796b;
+  font-weight: bold;
+}
+
+#quotes-container {
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: column;
+  margin-top: 42px;
+  text-align: left;
+  list-style-type: none;
+  align-items: center;
+  padding: 10px;
+}
+
 #author {
   font-size: 18px;
   font-style: italic;
   text-align: right;
   margin-top: -10px;
-  color: #696969;
-}
-
-#searchResultContainer {
-  text-align: center;
-  background-color: lightsalmon;
-}
-
-#search-bar {
-  width: 170px;
+  color: #009688;
 }
 
 #list {
@@ -114,6 +193,16 @@ h1 {
   width: 60px;
   height: 35px;
   line-height: 40px;
+}
+
+.submit-button {
+  font-size: 14px;
+  border-radius: 9px;
+  cursor: pointer;
+  padding: 5px;
+  margin-top: 5px;
+  color: #ffffff;
+  background-color: #00796b;
 }
 #new-quote-btn {
   font-size: 18px;
