@@ -19,9 +19,8 @@
   </head>
   <body>
     <div class="header">
-      <h1>Daily Wellness App</h1>
-      <p>Where the head goes, the body follows</p>
-      <a href="#quote" class="btn">Find your quote</a>
+      <h1>InspoQuotes</h1>
+      <p>If you’re looking for inspiration, you’ve come to the right place.</p>
     </div>
 
     <section>
@@ -42,15 +41,15 @@
         <input
           type="search"
           id="search-bar"
-          placeholder="Type in an author.."
+          placeholder="Find quotes by author.."
           name="search"
         />
-        <button type="submit">Get quotes by author</button>
+        <button type="submit">Search</button>
       </form>
     </div>
     <div id="searchResultContainer"></div>
 
-    <label for="tag-keywords">Get a quote by a keyword:</label>
+    <label for="tag-keywords">Browse by tag:</label>
     <select id="keyword-dropdown" name="tag-keywords">
       <option value=""></option>
       <option value="athletics">athletics</option>
@@ -104,26 +103,25 @@
     <div id="quotes-container"></div>
 
     <div class="container">
-
       <form id="reviews" method="POST">
-        <h3>What Are You Grateful for Today?</h3> 
-        <input type="text" id="name" name="name" placeholder="Your name.." />
-        <br />
-        <br />
+        <h3>Share your favorite quote!</h3>
         <textarea
           id="text"
           name="review"
           rows="4"
-          placeholder="Tell us what you're grateful for.."
+          placeholder="Your favorite quote.."
         ></textarea>
+        <br />
+        <input type="text" id="name" name="name" placeholder="Author" />
+        <br />
+        <input type="text" placeholder="Tags" />
         <br />
         <input type="submit" id="submitReview" />
       </form>
     </div>
     <div id="list">
-      <h2>I AM GRATEFUL FOR . . .</h2>
-      <ul id="grateful">
-      </ul>
+      <h2></h2>
+      <ul id="grateful"></ul>
     </div>
   </body>
 </html>

@@ -56,6 +56,10 @@ p {
   border-radius: 9px;
 }
 
+#search-bar {
+  width: 180px;
+}
+
 /*
 dark-primary-color    { background: #00796B; }
 .default-primary-color { background: #009688; }
