@@ -1,31 +1,29 @@
-let newQuote = document.querySelector('#new-quote-btn')
-function fetchQuotes() { 
-fetch("https://api.quotable.io/random")
-  .then((res) => res.json())
-  .then((quoteData) => {
-    renderQuote(quoteData);
-  });
+let newQuote = document.querySelector("#new-quote-btn");
+function fetchQuotes() {
+  fetch("https://api.quotable.io/random")
+    .then((res) => res.json())
+    .then((quoteData) => {
+      renderQuote(quoteData);
+    });
 }
 
 function renderQuote(quoteData) {
+  const p = document.querySelector("blockquote p");
+  p.textContent = `"${quoteData.content}"`;
+  const author = document.querySelector("#author");
+  author.textContent = `━ ${quoteData.author}`;
+  p.addEventListener("mouseenter", () => {
+    p.style.color = "#00796B";
+  });
 
-    
-        const p = document.querySelector("blockquote p");
-        p.textContent = `"${quoteData.content}"`;
-        const author = document.querySelector("#author");
-        author.textContent = `━ ${quoteData.author}`;
-        p.addEventListener("mouseenter", () => {
-          p.style.color = "#00796B";
-        });
-      
-        p.addEventListener("mouseleave", () => {
-          p.style.color = "#212121";
-        });
-    }
+  p.addEventListener("mouseleave", () => {
+    p.style.color = "#212121";
+  });
+}
 
-newQuote.addEventListener('click', () => fetchQuotes())
+newQuote.addEventListener("click", () => fetchQuotes());
 
-fetchQuotes()
+fetchQuotes();
 
 let form1 = document.querySelector("#search-form");
 form1.addEventListener("input", (e) => {
@@ -72,53 +70,56 @@ form1.addEventListener("submit", (e) => {
     });
 });
 
-/* let tagQuotes;
+let tagQuotes;
 let filterArray;
 let tagResult;
 let dropdown = document.querySelector("#keyword-dropdown");
-
-fetch(`http://api.quotable.io/quotes?tags=${tagResult}`)
-  .then((res) => res.json())
-  .then((data) => renderKeywordQuotes(data));
-
-function renderKeywordQuotes(data) {
-  tagQuotes = data.results;
-  filterArray.forEach((quote) => {
-    let quotesContainer = document.querySelector("#quotes-container");
-    let quotesUL = document.createElement("ul");
-    let quotesLI = document.createElement("li");
-    quotesLI.textContent = `${quote.content} by ${quote.author}`;
-    quotesUL.append(quotesLI);
-    quotesContainer.append(quotesUL, quotesLI);
-  }); */
-/* }
 
 dropdown.addEventListener("change", handleChange);
 
 function handleChange(e) {
   tagResult = e.target.value;
-  filterArray = tagQuotes.filter((quote) => quote.includes(tagResult));
-  console.log(filterArray);
-} */
+  tagResult.toLowerCase();
 
-let form = document.querySelector('#reviews')
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
-  buildToDo(e.target.text.value)
-  buildToDo(e.target.name.value)
-  form.reset()
-})
+  fetch(`http://api.quotable.io/quotes?tags=${tagResult}`)
+    .then((res) => res.json())
+    .then((data) => renderKeywordQuotes(data));
+}
+function renderKeywordQuotes(data) {
+  tagQuotes = data.results;
+  console.log(tagQuotes);
+  filterArray = tagQuotes.filter((quote) => quote.tags.includes(tagResult));
+
+  let quotesContainer = document.querySelector("#quotes-container");
+  quotesContainer.textContent = "";
+
+  filterArray.forEach((quote) => {
+    let quotesUL = document.createElement("ul");
+    let quotesLI = document.createElement("li");
+    quotesLI.textContent = `${quote.content} by ${quote.author}`;
+    quotesUL.append(quotesLI);
+    quotesContainer.append(quotesUL, quotesLI);
+  });
+}
+
+let form = document.querySelector("#reviews");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  buildToDo(e.target.text.value);
+  buildToDo(e.target.name.value);
+  form.reset();
+});
 
 function buildToDo(todo) {
-  let p = document.createElement('p')
-  let btn = document.createElement('button')
-  btn.addEventListener('click', handleDelete)
-  btn.textContent = 'x '
-  p.textContent = `${todo}`
-  p.appendChild(btn) 
-  document.querySelector('#grateful').appendChild(p)
+  let p = document.createElement("p");
+  let btn = document.createElement("button");
+  btn.addEventListener("click", handleDelete);
+  btn.textContent = "x ";
+  p.textContent = `${todo}`;
+  p.appendChild(btn);
+  document.querySelector("#grateful").appendChild(p);
 }
 
 function handleDelete(e) {
-  e.target.parentNode.remove()
+  e.target.parentNode.remove();
 }
