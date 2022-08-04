@@ -16,23 +16,40 @@
       href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="header">
       <h1>InspoQuotes</h1>
-      <p>If you’re looking for inspiration, you’ve come to the right place.</p>
+      <p>If you’re looking for inspiration, you’ve come to the right place</p>
     </div>
 
     <section>
-      <div class="container">
+      <div class="dailyQuotes">
         <figure>
           <blockquote id="quote">
             <p>Wait for it...</p>
             <figcaption id="author"></figcaption>
           </blockquote>
-          <button type="button" id="new-quote-btn" class="btn">
-            New quote
-          </button>
+          <div class="buttons">
+            <button type="button" id="new-quote-btn" class="btn">
+              New quote
+            </button>
+            <a
+              class="twitter"
+              id="tweet"
+              href="https://twitter.com/intent/tweet?text=Greetings"
+              data-size="large"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
         </figure>
       </div>
     </section>
@@ -119,7 +136,7 @@
       </form>
     </div>
     <div id="list">
-      <h2></h2>
+      <h2>Reader's favorite quotes:</h2>
       <ul id="grateful"></ul>
     </div>
   </body>

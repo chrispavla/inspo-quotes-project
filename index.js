@@ -14,11 +14,20 @@ function renderQuote(quoteData) {
   author.textContent = `━ ${quoteData.author}`;
   p.addEventListener("mouseenter", () => {
     p.style.color = "#00796B";
+    p.style.fontWeight = "700";
   });
 
   p.addEventListener("mouseleave", () => {
     p.style.color = "#212121";
+    p.style.fontWeight = "";
   });
+
+  const tweetButton = document.getElementById("tweet");
+  tweetButton.href =
+    "https://twitter.com/intent/tweet?text=" +
+    quoteData.content +
+    " ~ " +
+    quoteData.author;
 }
 
 newQuote.addEventListener("click", () => fetchQuotes());

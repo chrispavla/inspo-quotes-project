@@ -7,16 +7,36 @@ html {
   font-family: "Arimo", sans-serif;
   color: #212121;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(images/callum-shaw-HRayFsFYkhM-unsplash.jpg);
+  background-size: cover;
+}
+
 h1 {
   color: #00796b;
   font-size: 52px;
   margin-bottom: 32px;
+  text-align: center;
 }
-p {
-  font-size: 20px;
-  line-height: 1.6;
+
+.header {
+  width: 1200px;
+  margin-top: 50px;
+}
+
+.header p {
+  font-size: 24px;
+  font-style: italic;
   margin-bottom: 48px;
+  text-align: center;
 }
+
 .container {
   margin: 0 auto;
   width: 1200px;
@@ -27,29 +47,103 @@ p {
 }
 #search-container {
   text-align: center;
+  background-color: lightskyblue;
 }
+
+.dailyQuotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+  text-align: center;
+} */
+.dailyQuotes:hover {
+  box-shadow: 0 10px 10px #00796b;
+}
+
+.dailyQuotes p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+#author {
+  font-size: 18px;
+  font-style: italic;
+  text-align: right;
+  margin-top: -10px;
+  color: #696969;
+}
+
 #searchResultContainer {
   text-align: center;
+  background-color: lightsalmon;
 }
 
 #search-bar {
   width: 170px;
 }
-.header {
-  width: 1200px;
-  height: 50vh;
-  background-color: bisque;
-}
-h1 {
-  text-align: center;
-}
-p {
-  text-align: center;
-}
+
 #list {
   text-align: center;
+  background-color: aqua;
 }
-.btn:link,
+
+/* Buttons */
+.twitter {
+  border: 1px solid rgb(102, 179, 255);
+  border-radius: 4px;
+  background-color: rgb(102, 179, 255);
+  color: white;
+  text-align: center;
+  font-size: 1.8em;
+  width: 60px;
+  height: 35px;
+  line-height: 40px;
+}
+#new-quote-btn {
+  font-size: 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 5px;
+  color: #ffffff;
+  background-color: #00796b;
+}
+
+#new-quote-btn:link,
+#new-quote-btn:visited {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #00796b;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 9px;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 9px;
+}
+/* .btn:link,
 .btn:visited {
   font-size: 20px;
   font-weight: 500;
@@ -67,7 +161,8 @@ p {
   color: #ffffff;
   padding: 4px 12px;
   border-radius: 9px;
-}
+} */
+
 /*
 dark-primary-color    { background: #00796B; }
 .default-primary-color { background: #009688; }
