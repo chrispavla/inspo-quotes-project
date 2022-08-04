@@ -3,38 +3,52 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   font-family: "Arimo", sans-serif;
   color: #212121;
 }
-
 h1 {
   color: #00796b;
   font-size: 52px;
   margin-bottom: 32px;
 }
-
 p {
   font-size: 20px;
   line-height: 1.6;
   margin-bottom: 48px;
 }
-
 .container {
   margin: 0 auto;
   width: 1200px;
   background-color: rosybrown;
   margin-bottom: 48px;
   padding: 54px 46px;
+  text-align: center;
+}
+#search-container {
+  text-align: center;
+}
+#searchResultContainer {
+  text-align: center;
 }
 
+#search-bar {
+  width: 170px;
+}
 .header {
   width: 1200px;
   height: 50vh;
   background-color: bisque;
 }
-
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+#list {
+  text-align: center;
+}
 .btn:link,
 .btn:visited {
   font-size: 20px;
@@ -46,7 +60,6 @@ p {
   padding: 16px 32px;
   border-radius: 9px;
 }
-
 .btn {
   font-size: 20px;
   font-weight: 400;
@@ -55,11 +68,6 @@ p {
   padding: 4px 12px;
   border-radius: 9px;
 }
-
-#search-bar {
-  width: 180px;
-}
-
 /*
 dark-primary-color    { background: #00796B; }
 .default-primary-color { background: #009688; }
@@ -69,8 +77,7 @@ dark-primary-color    { background: #00796B; }
 .primary-text-color    { color: #212121; }
 .secondary-text-color  { color: #757575; }
 .divider-color         { border-color: #BDBDBD; }  */
-
-/*  
+/*
 .dark-primary-color    { background: #455A64; }
 .default-primary-color { background: #607D8B; }
 .light-primary-color   { background: #CFD8DC; }
