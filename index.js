@@ -112,22 +112,25 @@ function renderKeywordQuotes(data) {
 }
 
 let form = document.querySelector("#reviews");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  buildToDo(e.target.text.value);
-  buildToDo(e.target.name.value);
-  form.reset();
-});
+form.addEventListener("submit", (event) => buildToDo(event))
 
-function buildToDo(todo) {
-  let p = document.createElement("p");
-  let btn = document.createElement("button");
-  btn.addEventListener("click", handleDelete);
-  btn.textContent = "x ";
-  p.textContent = `${todo}`;
-  p.appendChild(btn);
-  document.querySelector("#grateful").appendChild(p);
-}
+ 
+  function buildToDo(event) {
+  event.preventDefault();
+  let tags = event.target.tags.value
+  let quote = event.target.quote.value
+  let authorInput = event.target.author.value
+  
+    let p = document.createElement("p");
+    let btn = document.createElement("button");
+    btn.addEventListener("click", handleDelete);
+    btn.textContent = "x ";
+    p.textContent = `"${quote}"`+ `-  ${authorInput}` + `#${tags}`;
+    p.appendChild(btn);
+    document.querySelector("#grateful").appendChild(p);
+
+form.reset();
+  }
 
 function handleDelete(e) {
   e.target.parentNode.remove();
