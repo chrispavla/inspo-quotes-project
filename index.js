@@ -4,6 +4,7 @@ function fetchQuotes() {
     .then((res) => res.json())
     .then((quoteData) => {
       renderQuote(quoteData);
+      console.log(quoteData);
     });
 }
 
@@ -12,6 +13,8 @@ function renderQuote(quoteData) {
   p.textContent = `"${quoteData.content}"`;
   const author = document.querySelector("#author");
   author.textContent = `━ ${quoteData.author}`;
+  const tags = document.querySelector("#tags");
+  tags.textContent = `# ${quoteData.tags}`;
   p.addEventListener("mouseenter", () => {
     p.style.color = "#00796B";
     p.style.fontWeight = "700";
@@ -51,7 +54,9 @@ form1.addEventListener("input", (e) => {
         searchData.results.forEach((quote) => {
           let quotesUL = document.createElement("ul");
           let quotesLI = document.createElement("li");
-          quotesLI.textContent = `${quote.content} by ${quote.author}`;
+          quotesLI.className = "styling";
+          quotesLI.textContent = `"${quote.content}" 
+          by ${quote.author}`;
           quotesUL.append(quotesLI);
           searchContainer.append(quotesUL, quotesLI);
         });
@@ -72,7 +77,9 @@ form1.addEventListener("submit", (e) => {
       searchData.results.forEach((quote) => {
         let quotesUL = document.createElement("ul");
         let quotesLI = document.createElement("li");
-        quotesLI.textContent = `${quote.content} by ${quote.author}`;
+        quotesLI.className = "styling";
+        quotesLI.textContent = `"${quote.content}" 
+        by ${quote.author}`;
         quotesUL.append(quotesLI);
         searchContainer.append(quotesUL, quotesLI);
       });
@@ -105,7 +112,9 @@ function renderKeywordQuotes(data) {
   filterArray.forEach((quote) => {
     let quotesUL = document.createElement("ul");
     let quotesLI = document.createElement("li");
-    quotesLI.textContent = `${quote.content} by ${quote.author}`;
+    quotesLI.className = "styling";
+    quotesLI.textContent = `"${quote.content}" 
+    by ${quote.author}`;
     quotesUL.append(quotesLI);
     quotesContainer.append(quotesUL, quotesLI);
   });
