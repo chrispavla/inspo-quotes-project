@@ -121,25 +121,27 @@ function renderKeywordQuotes(data) {
 }
 
 let form = document.querySelector("#reviews");
-form.addEventListener("submit", (event) => buildToDo(event))
+form.addEventListener("submit", (event) => buildToDo(event));
 
- 
-  function buildToDo(event) {
+function buildToDo(event) {
   event.preventDefault();
-  let tags = event.target.tags.value
-  let quote = event.target.quote.value
-  let authorInput = event.target.author.value
-  
-    let p = document.createElement("p");
-    let btn = document.createElement("button");
-    btn.addEventListener("click", handleDelete);
-    btn.textContent = "x ";
-    p.textContent = `"${quote}"`+ `-  ${authorInput}` + `#${tags}`;
-    p.appendChild(btn);
-    document.querySelector("#grateful").appendChild(p);
+  let tags = event.target.tagsForm.value;
+  let quote = event.target.quoteForm.value;
+  let authorInput = event.target.authorForm.value;
 
-form.reset();
-  }
+  let p = document.createElement("p");
+  p.className = "editor fav favQuote";
+  let btn = document.createElement("button");
+  btn.addEventListener("click", handleDelete);
+  btn.textContent = "Delete";
+  btn.className = "submit-button fav favButton";
+  p.textContent = `"${quote}" ━  ${authorInput} #${tags}
+  `;
+  p.appendChild(btn);
+  document.querySelector("#grateful").appendChild(p);
+
+  form.reset();
+}
 
 function handleDelete(e) {
   e.target.parentNode.remove();

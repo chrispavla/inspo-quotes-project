@@ -121,27 +121,28 @@
         <div id="quotes-container"></div>
       </div>
     </section>
-
-    <div class="container">
-      <form id="reviews" method="POST">
-        <h3>Share your favorite quote!</h3>
-        <textarea
-          id="quote"
-          name="review"
-          rows="4"
-          placeholder="Your favorite quote.."
-        ></textarea>
-        <br />
-        <input type="text" id="author" name="name" placeholder="Author" />
-        <br />
-        <input type="text" id="tags" placeholder="Tags" />
-        <br />
-        <input type="submit" class="submit-button" id="submitReview" />
-      </form>
-    </div>
-    <div id="list">
-      <h2>Reader's favorite quotes:</h2>
-      <ul id="grateful"></ul>
+    <div id="reviewsSection">
+      <div class="container">
+        <form id="reviews" method="POST">
+          <h3>Share your favorite quote!</h3>
+          <textarea
+            id="quoteForm"
+            name="review"
+            rows="4"
+            placeholder="Your favorite quote.."
+          ></textarea>
+          <br />
+          <input type="text" id="authorForm" name="name" placeholder="Author" />
+          <br />
+          <input type="text" id="tagsForm" placeholder="Tags" />
+          <br />
+          <input type="submit" class="submit-button" id="submitReview" />
+        </form>
+      </div>
+      <div id="list">
+        <h2>Reader's favorite quotes:</h2>
+        <ul id="grateful"></ul>
+      </div>
     </div>
   </body>
 </html>
