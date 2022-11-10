@@ -41,7 +41,7 @@ open index.html
 - Javascript
 - Custom CSS
 - JSON
-- API https://github.com/lukePeavey/quotable#reporting-downtime
+- API https://github.com/lukePeavey/quotable
 
 ## Demo
 
