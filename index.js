@@ -1,10 +1,10 @@
 let newQuote = document.querySelector("#new-quote-btn");
+
 function fetchQuotes() {
   fetch("https://api.quotable.io/random")
     .then((res) => res.json())
     .then((quoteData) => {
       renderQuote(quoteData);
-      console.log(quoteData);
     });
 }
 
@@ -103,7 +103,6 @@ function handleChange(e) {
 }
 function renderKeywordQuotes(data) {
   tagQuotes = data.results;
-  console.log(tagQuotes);
   filterArray = tagQuotes.filter((quote) => quote.tags.includes(tagResult));
 
   let quotesContainer = document.querySelector("#quotes-container");
