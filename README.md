@@ -44,6 +44,10 @@ open index.html
 - API https://github.com/lukePeavey/quotable
 
 ## Demo
+<a href="https://www.loom.com/share/57b367ce243546edb0f2136a82508505">
+    <p>InspoQuotes App - Watch Video Walkthrough</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/57b367ce243546edb0f2136a82508505-1668109329074-with-play.gif">
+  </a>
 
 ### Random quotes generator
 <img width="1423" alt="Screen Shot 2022-11-10 at 12 07 02 PM" src="https://user-images.githubusercontent.com/105557320/201164657-8f21ee7f-4d66-42db-95e6-2d97a52f9915.png">
